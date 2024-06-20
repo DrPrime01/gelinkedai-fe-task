@@ -13,7 +13,7 @@ export default function Navbar() {
 					/>
 					<div className="flex flex-col gap-y-[3px]">
 						<p className="text-xl font-medium">Frontend developer</p>
-						<p className="text-sm text-[#8C8CA1]">Skill assessment test</p>
+						<p className="text-sm text-gray-200">Skill assessment test</p>
 					</div>
 				</div>
 				<div className="flex items-center gap-x-2.5">
@@ -24,7 +24,7 @@ export default function Navbar() {
 							width={24}
 							height={24}
 						/>
-						<p className="text-[#755AE2] text-lg font-bold">
+						<p className="text-primary-500 text-lg font-bold">
 							29:10 <span className="text-sm font-medium">time left</span>
 						</p>
 					</div>

@@ -1,3 +1,8 @@
+import StatusIndicator from "@/components/StatusIndicator";
+import GadgetMicIcon from "@/components/vectors/GadgetMicIcon";
+import LightingIcon from "@/components/vectors/LightingIcon";
+import SpeedIcon from "@/components/vectors/SpeedIcon";
+import WebcamIcon from "@/components/vectors/WebcamIcon";
 import Image from "next/image";
 
 export default function Home() {
@@ -5,7 +10,7 @@ export default function Home() {
 		<main className="flex justify-center p-6">
 			<div className="max-w-[832px] w-full flex flex-col bg-white rounded-[20px] pt-9 px-12 pb-11">
 				<h3 className="font-medium text-xl mb-2">System check</h3>
-				<p className="text-sm text-[#4A4A68] mb-[30px]">
+				<p className="text-sm text-gray-500 mb-[30px]">
 					We utilize your camera image to ensure fairness for all participants,
 					and we also employ both your camera and microphone for a video
 					questions where you will be prompted to record a response using your
@@ -28,10 +33,10 @@ export default function Home() {
 						/>
 					</div>
 					<div className="grid grid-cols-2 gap-y-3 gap-x-4">
-						<div className="h-[71px] w-[91px] rounded-[10px] bg-[#F5F3FF] flex items-center justify-center relative"></div>
-						<div className="h-[71px] w-[91px] rounded-[10px] bg-[#F5F3FF] flex items-center justify-center relative"></div>
-						<div className="h-[71px] w-[91px] rounded-[10px] bg-[#F5F3FF] flex items-center justify-center relative"></div>
-						<div className="h-[71px] w-[91px] rounded-[10px] bg-[#F5F3FF] flex items-center justify-center relative"></div>
+						<StatusIndicator label="Webcam" icon={<WebcamIcon />} />
+						<StatusIndicator label="Speed" icon={<SpeedIcon />} />
+						<StatusIndicator label="Gadget Mic" icon={<GadgetMicIcon />} />
+						<StatusIndicator label="Lighting" icon={<LightingIcon />} />
 					</div>
 				</div>
 				<div>
