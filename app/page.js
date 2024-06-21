@@ -1,9 +1,4 @@
-import StatusIndicator from "@/components/StatusIndicator";
-import GadgetMicIcon from "@/components/vectors/GadgetMicIcon";
-import LightingIcon from "@/components/vectors/LightingIcon";
-import SpeedIcon from "@/components/vectors/SpeedIcon";
-import WebcamIcon from "@/components/vectors/WebcamIcon";
-import Image from "next/image";
+import Streaming from "@/components/Streaming";
 
 export default function Home() {
 	return (
@@ -22,28 +17,7 @@ export default function Home() {
 					can initiate a 5-second recording of yourself by clicking the button
 					below.
 				</p>
-				<div className="flex flex-col md:flex-row md:items-center gap-8 mb-10">
-					<div className="border border-[#755AE2] rounded-[10px] md:max-w-[275px] w-full h-[168px]">
-						<Image
-							src="/assets/images/placeholder-img.png"
-							alt="placeholder"
-							width={270}
-							height={168}
-							className="object-contain"
-						/>
-					</div>
-					<div className="grid grid-cols-2 gap-y-3 gap-x-4">
-						<StatusIndicator label="Webcam" icon={<WebcamIcon />} />
-						<StatusIndicator label="Speed" icon={<SpeedIcon />} />
-						<StatusIndicator label="Gadget Mic" icon={<GadgetMicIcon />} />
-						<StatusIndicator label="Lighting" icon={<LightingIcon />} />
-					</div>
-				</div>
-				<div>
-					<button className="rounded-lg bg-[#755AE2] text-white py-[13px] px-[17px] text-sm font-medium">
-						Take picture and continue
-					</button>
-				</div>
+				<Streaming />
 			</div>
 		</main>
 	);
