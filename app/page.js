@@ -5,21 +5,24 @@ import Streaming from "@/components/Streaming";
 import Modal from "@/components/Modal";
 
 export default function Home() {
-	// Initialize openModal state correctly
-	const openModalStatus = JSON.parse(
-		localStorage.getItem("openModalStatus") || "false"
-	);
-	const [openModal, setOpenModal] = useState(openModalStatus);
+	const [openModal, setOpenModal] = useState(false);
 
 	useEffect(() => {
-		if (!openModalStatus) {
-			const handleOpenModal = setTimeout(() => {
-				setOpenModal(true);
-				localStorage.setItem("openModalStatus", JSON.stringify(true));
-			}, 3000);
-			return () => clearTimeout(handleOpenModal);
+		if (typeof window !== "undefined") {
+			const openModalStatus = JSON.parse(
+				localStorage.getItem("openModalStatus") || "false"
+			);
+			setOpenModal(openModalStatus);
+
+			if (!openModalStatus) {
+				const handleOpenModal = setTimeout(() => {
+					setOpenModal(true);
+					localStorage.setItem("openModalStatus", JSON.stringify(true));
+				}, 3000);
+				return () => clearTimeout(handleOpenModal);
+			}
 		}
-	}, [openModalStatus]);
+	}, []);
 
 	return (
 		<main className="flex justify-center p-6">
