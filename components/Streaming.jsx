@@ -162,6 +162,9 @@ export default function Streaming() {
 				videoRef.current.srcObject = null;
 			}
 
+			const ctx = canvasRef.current.getContext("2d");
+			ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
 			setWebcamStatus("pending");
 			setLightingStatus("pending");
 			setMicStatus("pending");
