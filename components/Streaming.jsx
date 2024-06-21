@@ -113,6 +113,7 @@ export default function Streaming() {
 				ctx.lineWidth = 2;
 				ctx.strokeStyle = "red";
 				ctx.fillStyle = "red";
+				ctx.font = "24px";
 				ctx.stroke();
 				ctx.fillText(
 					`${prediction.class} - ${Math.round(prediction.score * 100)}%`,
