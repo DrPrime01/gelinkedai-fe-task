@@ -158,7 +158,7 @@ export default function Streaming() {
 					/>
 					<canvas
 						ref={canvasRef}
-						className="absolute inset-0 w-full mad:max-w-[268px] h-[168px] border border-primary-500 rounded-[10px]"
+						className="absolute inset-0 w-full mad:max-w-[268px] h-[168px] border-2 border-primary-500 rounded-[10px]"
 					/>
 				</div>
 				<div className="grid grid-cols-2 gap-y-3 gap-x-4">
