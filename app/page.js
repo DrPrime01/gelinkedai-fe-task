@@ -42,7 +42,9 @@ export default function Home() {
 				</p>
 				<Streaming />
 			</div>
-			<Modal openModal={openModal} closeModal={() => setOpenModal(false)} />
+			{typeof window !== "undefined" && (
+				<Modal openModal={openModal} closeModal={() => setOpenModal(false)} />
+			)}
 		</main>
 	);
 }
