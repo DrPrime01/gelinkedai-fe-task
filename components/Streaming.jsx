@@ -17,7 +17,7 @@ export default function Streaming() {
 	const videoRef = useRef(null);
 	const canvasRef = useRef(null);
 
-	const [webcamStatus, setWebcamStatus] = useState("");
+	const [webcamStatus, setWebcamStatus] = useState("completed");
 	const [lightingStatus, setLightingStatus] = useState("");
 	const [micStatus, setMicStatus] = useState("");
 	const [speedStatus, setSpeedStatus] = useState("");
@@ -31,8 +31,10 @@ export default function Streaming() {
 				videoRef.current.srcObject = stream;
 				return new Promise((resolve) => {
 					videoRef.current.onloadedmetadata = () => {
-						setWebcamStatus("completed");
 						resolve(videoRef.current);
+						setTimeout(() => {
+							setWebcamStatus("completed");
+						}, 3000);
 					};
 				});
 			} catch (error) {
@@ -43,7 +45,9 @@ export default function Streaming() {
 		async function checkMicrophone() {
 			try {
 				await navigator.mediaDevices.getUserMedia({ audio: true });
-				setMicStatus("completed");
+				setTimeout(() => {
+					setMicStatus("completed");
+				}, 3000);
 			} catch (error) {
 				setMicStatus("warning");
 			}
@@ -56,7 +60,9 @@ export default function Streaming() {
 				const endTime = Date.now();
 				const duration = endTime - startTime;
 				if (duration < 2000) {
-					setSpeedStatus("completed");
+					setTimeout(() => {
+						setSpeedStatus("completed");
+					}, 3000);
 				} else {
 					setSpeedStatus("warning");
 				}
@@ -136,7 +142,9 @@ export default function Streaming() {
 
 			const brightness = brightPixels / (pixels.length / 4);
 			if (brightness > 0.5) {
-				setLightingStatus("completed");
+				setTimeout(() => {
+					setLightingStatus("completed");
+				}, 3000);
 			} else {
 				setLightingStatus("warning");
 			}
@@ -151,7 +159,7 @@ export default function Streaming() {
 				<div className="md:max-w-[275px] w-full h-[168px] relative">
 					<video
 						ref={videoRef}
-						className="object-contain border border-primary-500 rounded-[10px] w-full md:max-w-[268px] h-[168px]"
+						className="object-contain w-full md:max-w-[268px] h-[168px]"
 						autoPlay
 						playsInline
 						muted

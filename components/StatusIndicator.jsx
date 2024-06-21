@@ -14,10 +14,18 @@ export default function StatusIndicator({ status, icon, iconSmall, label }) {
 			<div
 				className={`rounded-full ${
 					status === "warning" ? "bg-warning/10" : "bg-primary-200"
-				} flex items-center justify-center mb-1 h-[35px] w-[35px]`}
+				} flex items-center justify-center mb-1 h-[35px] w-[35px] border-2 ${
+					status === "completed"
+						? "border-primary-500"
+						: status === "warning"
+						? "border-warning"
+						: "border-none"
+				}`}
 			>
 				{status === "completed" ? (
-					<CompletedIcon />
+					<div className="rounded-full flex items-center justify-center bg-primary-500 h-[27.5px] w-[27.5px] m-0.5">
+						<CompletedIcon />
+					</div>
 				) : status === "warning" ? (
 					<WarningIcon />
 				) : (

@@ -1,6 +1,24 @@
+"use client";
+import { useState, useEffect } from "react";
+
 import Streaming from "@/components/Streaming";
+import Modal from "@/components/Modal";
 
 export default function Home() {
+	const openModalStatus = localStorage.getItem("openModalStatus");
+	const [openModal, setOpenModal] = useState(openModalStatus);
+
+	useEffect(() => {
+		localStorage.setItem("openModalStatus", false);
+		if (!openModalStatus) {
+			const handleOpenModal = setTimeout(() => {
+				setOpenModal(true);
+				localStorage.setItem("openModalStatus", true);
+			}, 3000);
+			return () => clearTimeout(handleOpenModal);
+		}
+	}, [openModalStatus]);
+
 	return (
 		<main className="flex justify-center p-6">
 			<div className="max-w-[832px] w-full flex flex-col bg-white rounded-[20px] pt-9 px-12 pb-11">
@@ -19,6 +37,7 @@ export default function Home() {
 				</p>
 				<Streaming />
 			</div>
+			<Modal openModal={openModal} closeModal={() => setOpenModal(false)} />
 		</main>
 	);
 }

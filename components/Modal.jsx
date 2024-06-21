@@ -8,10 +8,10 @@ export default function Modal({ openModal, closeModal }) {
 			onClick={(e) => e.target === e.currentTarget && closeModal()}
 			className={`fixed w-full h-full inset-0 bg-black/50 flex items-center justify-center z-50 overflow-hidden transition-opacity delay-[50ms] ${
 				openModal ? "opacity-100" : "opacity-0"
-			} `}
+			}`}
 		>
 			<div
-				className={`flex flex-col max-h-[472px] md:max-h-[314px] transition-transform duration-200 delay-100 ${
+				className={`flex flex-col max-w-[472px] bg-[#F5F3FF] w-full md:max-h-[314px] box-border rounded-[18px] md:h-full transition-transform duration-200 delay-100 ${
 					openModal ? "scale-100" : "scale-75"
 				}`}
 			>
@@ -24,7 +24,7 @@ export default function Modal({ openModal, closeModal }) {
 						Close
 					</button>
 				</div>
-				<div className="bg-[#F5F3FF] flex justify-center text-center pt-[34px] flex-1">
+				<div className="flex flex-col justify-center text-center pt-[34px] flex-1 max-w-[335px] mx-auto">
 					<h3 className="mb-2 text-xl text-primary-500 font-semibold">
 						Proceed to start assessment
 					</h3>
@@ -33,8 +33,11 @@ export default function Modal({ openModal, closeModal }) {
 						of your camera/webcam and start your assessment.
 					</p>
 				</div>
-				<div className="bg-white rounded-t-[18px] py-[18px]">
-					<button className="rounded-lg bg-primary-500 text-white py-3 px-10">
+				<div className="bg-white rounded-t-[18px] py-[18px] px-[34px] flex justify-end">
+					<button
+						className="rounded-lg bg-primary-500 text-white py-3 px-10"
+						onClick={closeModal}
+					>
 						Proceed
 					</button>
 				</div>
