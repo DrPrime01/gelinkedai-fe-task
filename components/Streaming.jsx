@@ -150,7 +150,23 @@ export default function Streaming() {
 	}
 
 	useEffect(() => {
-		console.log(isRunning);
+		if (!isRunning) {
+			if (videoRef.current && videoRef.current.srcObject) {
+				const stream = videoRef.current.srcObject;
+				const tracks = stream.getTracks();
+
+				tracks.forEach((track) => {
+					track.stop();
+				});
+
+				videoRef.current.srcObject = null;
+			}
+
+			setWebcamStatus("pending");
+			setLightingStatus("pending");
+			setMicStatus("pending");
+			setSpeedStatus("pending");
+		}
 	}, [isRunning]);
 
 	return (
