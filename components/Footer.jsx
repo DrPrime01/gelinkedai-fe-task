@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
 	return (
-		<footer className="py-10 px-[105px] mb-9 mt-12 bg-transparent">
+		<footer className="py-10 px-6 md:px-[105px] mb-9 mt-12 bg-transparent">
 			<p className="text-sm text-[#8C8CA1]">
 				POWERED BY{" "}
 				<Link
