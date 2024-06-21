@@ -113,7 +113,6 @@ export default function Streaming() {
 			);
 		});
 
-		// Simple lighting check: count the number of non-black pixels
 		const imageData = ctx.getImageData(
 			0,
 			0,
