@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from "react";
+"use client";
+import { useState, useRef } from "react";
 import * as cocoSsd from "@tensorflow-models/coco-ssd";
 import "@tensorflow/tfjs";
 
@@ -30,7 +31,6 @@ export default function Streaming() {
 			return new Promise((resolve) => {
 				videoRef.current.onloadedmetadata = () => {
 					resolve(videoRef.current);
-
 					setWebcamStatus("completed");
 				};
 			});
@@ -42,9 +42,7 @@ export default function Streaming() {
 	async function checkMicrophone() {
 		try {
 			await navigator.mediaDevices.getUserMedia({ audio: true });
-			setTimeout(() => {
-				setMicStatus("completed");
-			}, 3000);
+			setMicStatus("completed");
 		} catch (error) {
 			setMicStatus("warning");
 		}
@@ -143,6 +141,7 @@ export default function Streaming() {
 	}
 
 	function startStreaming() {
+		console.log("Button clicked!"); // Debugging log
 		setIsRunning(true);
 		try {
 			runSystemChecks();
