@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import * as cocoSsd from "@tensorflow-models/coco-ssd";
 import "@tensorflow/tfjs";
 
@@ -148,6 +148,10 @@ export default function Streaming() {
 			console.log(error);
 		}
 	}
+
+	useEffect(() => {
+		console.log(isRunning);
+	}, [isRunning]);
 
 	return (
 		<>
