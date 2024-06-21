@@ -8,20 +8,7 @@ export default function Home() {
 	const [openModal, setOpenModal] = useState(false);
 
 	useEffect(() => {
-		if (typeof window !== "undefined") {
-			const openModalStatus = JSON.parse(
-				localStorage.getItem("openModalStatus") || "false"
-			);
-			setOpenModal(openModalStatus);
-
-			if (!openModalStatus) {
-				const handleOpenModal = setTimeout(() => {
-					setOpenModal(true);
-					localStorage.setItem("openModalStatus", JSON.stringify(true));
-				}, 3000);
-				return () => clearTimeout(handleOpenModal);
-			}
-		}
+		setOpenModal(true);
 	}, []);
 
 	return (
@@ -42,9 +29,8 @@ export default function Home() {
 				</p>
 				<Streaming />
 			</div>
-			{typeof window !== "undefined" && (
-				<Modal openModal={openModal} closeModal={() => setOpenModal(false)} />
-			)}
+
+			<Modal openModal={openModal} closeModal={() => setOpenModal(false)} />
 		</main>
 	);
 }
