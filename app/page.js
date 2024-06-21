@@ -5,15 +5,17 @@ import Streaming from "@/components/Streaming";
 import Modal from "@/components/Modal";
 
 export default function Home() {
-	const openModalStatus = localStorage.getItem("openModalStatus");
+	// Initialize openModal state correctly
+	const openModalStatus = JSON.parse(
+		localStorage.getItem("openModalStatus") || "false"
+	);
 	const [openModal, setOpenModal] = useState(openModalStatus);
 
 	useEffect(() => {
-		localStorage.setItem("openModalStatus", false);
 		if (!openModalStatus) {
 			const handleOpenModal = setTimeout(() => {
 				setOpenModal(true);
-				localStorage.setItem("openModalStatus", true);
+				localStorage.setItem("openModalStatus", JSON.stringify(true));
 			}, 3000);
 			return () => clearTimeout(handleOpenModal);
 		}
