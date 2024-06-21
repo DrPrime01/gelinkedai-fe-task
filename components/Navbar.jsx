@@ -64,7 +64,7 @@ export default function Navbar() {
 							height={24}
 						/>
 						<p className="text-primary-500 text-sm md:text-lg font-bold">
-							{formatTime(timeLeft)} <br className="max-md:hidden" />
+							{formatTime(timeLeft)} <br className="md:hidden" />
 							<span className="text-sm font-medium">time left</span>
 						</p>
 					</div>
