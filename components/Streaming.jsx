@@ -196,15 +196,14 @@ export default function Streaming() {
 					/>
 				</div>
 			</div>
-			<div>
-				<button
-					// disabled={isRunning}
-					onClick={startStreaming}
-					className="rounded-lg bg-primary-500 disabled:bg-primary-500/50 text-white py-[13px] px-[17px] text-sm font-medium max-md:w-full"
-				>
-					{isRunning ? "Detecting objects..." : "Take picture and continue"}
-				</button>
-			</div>
+
+			<button
+				disabled={isRunning}
+				onClick={startStreaming}
+				className="rounded-lg bg-primary-500 disabled:bg-primary-500/50 text-white py-[13px] px-[17px] text-sm font-medium max-md:w-full"
+			>
+				{isRunning ? "Detecting objects..." : "Take picture and continue"}
+			</button>
 		</>
 	);
 }
