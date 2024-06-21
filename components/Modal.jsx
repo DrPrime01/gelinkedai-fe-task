@@ -11,7 +11,7 @@ export default function Modal({ openModal, closeModal }) {
 			}`}
 		>
 			<div
-				className={`flex flex-col max-w-[472px] bg-[#F5F3FF] w-full md:max-h-[314px] box-border rounded-[18px] md:h-full transition-transform duration-200 delay-100 ${
+				className={`flex flex-col max-md:mx-6 max-w-[472px] bg-[#F5F3FF] w-full h-full max-h-[314px] box-border rounded-[18px] md:h-full transition-transform duration-200 delay-100 ${
 					openModal ? "scale-100" : "scale-75"
 				}`}
 			>
