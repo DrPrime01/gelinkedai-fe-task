@@ -7,7 +7,7 @@ export default function Modal({ openModal, closeModal }) {
 		<div
 			onClick={(e) => e.target === e.currentTarget && closeModal()}
 			className={`fixed w-full h-full inset-0 bg-black/50 flex items-center justify-center z-50 overflow-hidden transition-opacity delay-[50ms] ${
-				openModal ? "opacity-100" : "opacity-0"
+				openModal ? "opacity-100 flex" : "opacity-0 hidden"
 			}`}
 		>
 			<div
