@@ -140,7 +140,6 @@ export default function Streaming() {
 	}
 
 	function startStreaming() {
-		console.log("Button clicked!"); // Debugging log
 		setIsRunning(true);
 		try {
 			runSystemChecks();
