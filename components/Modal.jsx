@@ -6,12 +6,12 @@ export default function Modal({ openModal, closeModal }) {
 	return (
 		<div
 			onClick={(e) => e.target === e.currentTarget && closeModal()}
-			className={`fixed w-full h-full inset-0 bg-black/50 flex items-center justify-center z-50 overflow-hidden transition-opacity delay-[50ms] ${
+			className={`fixed w-full h-full inset-0 bg-black/50 flex items-center justify-center z-50 transition-opacity delay-[50ms] ${
 				openModal ? "opacity-100 flex" : "opacity-0 hidden"
 			}`}
 		>
 			<div
-				className={`flex flex-col max-md:mx-6 max-w-[472px] bg-[#F5F3FF] w-full h-full max-h-[314px] box-border rounded-[18px] md:h-full transition-transform duration-200 delay-100 ${
+				className={`flex flex-col max-md:mx-6 max-w-[472px] overflow-hidden bg-[#F5F3FF] w-full h-full max-h-[314px] box-border rounded-[18px] transition-transform duration-200 delay-100 ${
 					openModal ? "scale-100" : "scale-75"
 				}`}
 			>
