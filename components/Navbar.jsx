@@ -46,10 +46,8 @@ export default function Navbar() {
 						width={63}
 						height={62}
 					/>
-					<div className="flex flex-col gap-y-[3px]">
-						<p className="text-base md:text-xl font-medium">
-							Frontend developer
-						</p>
+					<div className="flex flex-col gap-y-0.5 md:gap-y-[3px]">
+						<p className="text-sm md:text-xl font-medium">Frontend developer</p>
 						<p className="text-xs md:text-sm text-gray-200">
 							Skill assessment test
 						</p>
