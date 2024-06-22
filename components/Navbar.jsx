@@ -39,7 +39,7 @@ export default function Navbar() {
 	return (
 		<header className="bg-white pt-6 pb-3 px-6 md:px-[105px]">
 			<nav className="flex items-center justify-between">
-				<div className="flex items-center gap-x-3">
+				<div className="flex items-center gap-x-2 md:gap-x-3">
 					<Image
 						src="/assets/images/logo.png"
 						alt="logo"
@@ -55,15 +55,15 @@ export default function Navbar() {
 						</p>
 					</div>
 				</div>
-				<div className="flex items-center gap-x-2.5">
-					<div className="rounded-lg p-2 md:py-2.5 md:px-4 bg-[#ECE8FF] flex items-center gap-x-2.5">
+				<div className="flex items-center gap-x-1.5 md:gap-x-2.5">
+					<div className="rounded-lg p-2 md:py-2.5 md:px-4 bg-[#ECE8FF] flex items-center gap-x-1.5 md:gap-x-2.5">
 						<Image
 							src="/assets/icons/timer-icon.svg"
 							alt="timer-icon"
 							width={24}
 							height={24}
 						/>
-						<p className="text-primary-500 text-sm md:text-lg font-bold">
+						<p className="text-primary-500 text-sm md:text-lg font-bold w-fit">
 							{formatTime(timeLeft)} <br className="md:hidden" />
 							<span className="text-sm font-medium">time left</span>
 						</p>
